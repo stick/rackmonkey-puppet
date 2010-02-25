@@ -13,16 +13,7 @@ class rackmonkey inherits rackmonkey::variables {
       group   => root,
       mode  => 0644,
       content   => template("rackmonkey/httpd-rackmonkey.conf"),
+      notify  => Service["httpd"],
     ;
   }
 }
-
-class rackmonkey::variables {
-  $rm_varroot = "/var/lib/rackmonkey"
-  $rm_conffile = "/etc/rackmonkey/rackmonkey.conf"
-  $rm_dbfile = "${rm_varroot}/rackmonkey.db"
-  $rm_tmplpath = "${rm_varroot}/tmpl"
-  $rm_wwwpath = "/inventory"
-  $rm_wwwroot = "/var/www/rackmonkey"
-}
-

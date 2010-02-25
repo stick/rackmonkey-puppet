@@ -1,0 +1,2 @@
+class rackmonkey::services::sqlite {
+}

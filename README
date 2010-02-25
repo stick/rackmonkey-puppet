@@ -1,2 +1,29 @@
-Readme for rackmonkey-puppet
-----------------------------
+rackmonkey-puppet
+-----------------
+
+This puppet module can be used to install and configure rackmonkey a rack inventory management app.
+
+Easy puppet installation instructions
+-------------------------------------
+You'll need to build the rpm and put it somewhere that puppet can find it with your appropriate provider.
+Optionally you can fake it out and install it manually, but what fun is that.
+
+Edit manifests/variables.pp to suite your environment.
+
+From the cloned module directory;
+# puppet  --verbose --modulepath $(dirname $(pwd)) install.pp
+This will initialize the db
+
+Database initialization
+-----------------------
+
+By default the database type is sqlite.
+
+[Untested configurations]
+Mysql caveats
+  - root can run mysqladmin/mysql commands without a password
+  - mysql is on the same machine
+
+Postgres caveats
+  - postgresql is on the same machine
+
