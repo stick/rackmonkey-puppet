@@ -27,3 +27,10 @@ Mysql caveats
 Postgres caveats
   - postgresql is on the same machine
 
+TODO
+----
+test mysql and postgres
+test package installations
+packaged unit tests
+currently nothing triggers the postgres or mysql execs to run
+
