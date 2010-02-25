@@ -1,0 +1,22 @@
+diff -up rackmonkey-1.2.5-1/conf/httpd-rackmonkey.conf.orig rackmonkey-1.2.5-1/conf/httpd-rackmonkey.conf
+--- rackmonkey-1.2.5-1/conf/httpd-rackmonkey.conf.orig	2010-02-24 17:33:20.285401038 -0500
++++ rackmonkey-1.2.5-1/conf/httpd-rackmonkey.conf	2010-02-24 17:59:51.120248221 -0500
+@@ -5,6 +5,7 @@
+ # RackMonkey Apache Configuration Include                                    #
+ ##############################################################################
+ 
++Alias /rackmonkey /var/www/rackmonkey
+ <Location /rackmonkey>
+     Options ExecCGI FollowSymLinks Includes
+     AddHandler cgi-script .pl
+@@ -12,8 +13,8 @@
+ 	AddType text/html .shtml 
+ 	AddHandler server-parsed .shtml
+ 	
+-	DirectoryIndex index.shtml index.html 
++	DirectoryIndex index.shtml index.html rackmonkey.pl
+ 
+ 	# Change the following line to load configuration file from another location
+-	SetEnv RACKMONKEY_CONF /etc/rackmonkey.conf
++	SetEnv RACKMONKEY_CONF /etc/rackmonkey/rackmonkey.conf
+ </Location>
